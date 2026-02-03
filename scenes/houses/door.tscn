@@ -89,7 +89,7 @@ animations = [{
 size = Vector2(15.5, 14.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nno8d"]
-size = Vector2(12, 25.5)
+size = Vector2(21, 56)
 
 [node name="Door" type="StaticBody2D" unique_id=23282902]
 script = ExtResource("1_act2a")
@@ -106,5 +106,5 @@ shape = SubResource("RectangleShape2D_bxi54")
 [node name="Interactable_Component" parent="." unique_id=1838863937 instance=ExtResource("3_1ugum")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable_Component" unique_id=131714406]
-position = Vector2(-1, 0)
+position = Vector2(-0.5, 1)
 shape = SubResource("RectangleShape2D_nno8d")
