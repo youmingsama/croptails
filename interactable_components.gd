@@ -1,0 +1,6 @@
+class_name InteractableComponent
+
+extends Area2D
+
+signal interactable_activated
+signal Interactble_deactivated

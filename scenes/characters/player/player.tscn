@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://4lvkyvyanufq"]
+[gd_scene format=3 uid="uid://4lvkyvyanufq"]
 
 [ext_resource type="Script" uid="uid://s4uljn44j7u0" path="res://scenes/characters/player/player.gd" id="1_6avc5"]
 [ext_resource type="Texture2D" uid="uid://cxfm3paf3ihds" path="res://asset/Characters/Basic Charakter Spritesheet.png" id="1_7uws0"]
@@ -396,44 +396,45 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t61fv"]
 size = Vector2(4, 7)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=1202087335]
+collision_mask = 3
 script = ExtResource("1_6avc5")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2128630665]
 position = Vector2(1, -8)
 sprite_frames = SubResource("SpriteFrames_3xnwo")
 animation = &"watering_right"
 autoplay = "idle_front"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1810882117]
 position = Vector2(0, -5.5)
 shape = SubResource("RectangleShape2D_t61fv")
 
-[node name="State_Machine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
+[node name="State_Machine" type="Node" parent="." unique_id=1782376563 node_paths=PackedStringArray("initial_node_state")]
 script = ExtResource("3_hss88")
 initial_node_state = NodePath("idle")
 
-[node name="idle" type="Node" parent="State_Machine" node_paths=PackedStringArray("player", "animated_sprite_2d")]
+[node name="idle" type="Node" parent="State_Machine" unique_id=1322146719 node_paths=PackedStringArray("player", "animated_sprite_2d")]
 script = ExtResource("4_qd3e3")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
-[node name="walk" type="Node" parent="State_Machine" node_paths=PackedStringArray("player", "animated_sprite_2d")]
+[node name="walk" type="Node" parent="State_Machine" unique_id=635562850 node_paths=PackedStringArray("player", "animated_sprite_2d")]
 script = ExtResource("5_qd3e3")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
-[node name="chopping" type="Node" parent="State_Machine" node_paths=PackedStringArray("player", "animated_sprite_2d")]
+[node name="chopping" type="Node" parent="State_Machine" unique_id=1829324132 node_paths=PackedStringArray("player", "animated_sprite_2d")]
 script = ExtResource("7_mk55u")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
-[node name="Tilling" type="Node" parent="State_Machine" node_paths=PackedStringArray("player", "animated_sprite_2d")]
+[node name="Tilling" type="Node" parent="State_Machine" unique_id=38471664 node_paths=PackedStringArray("player", "animated_sprite_2d")]
 script = ExtResource("8_xuses")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
-[node name="Watering" type="Node" parent="State_Machine" node_paths=PackedStringArray("player", "animated_sprite_2d")]
+[node name="Watering" type="Node" parent="State_Machine" unique_id=1976446137 node_paths=PackedStringArray("player", "animated_sprite_2d")]
 script = ExtResource("9_42irl")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
