@@ -7,14 +7,17 @@ extends StaticBody2D
 func _ready() -> void:
 	interactable_component.Interactable_activated.connect(on_Interactable_activated)
 	interactable_component.Interactable_deativated.connect(on_Interactable_deativated)
+	collision_layer = 1
 
 
 
 func on_Interactable_activated()->void:
 	animation_player.play("open_door")
+	collision_layer=2
 	print("进来了")
 	pass
 func on_Interactable_deativated()->void:
 	animation_player.play("close_door")
+	collision_layer=1
 	print("出去了")
 	pass
